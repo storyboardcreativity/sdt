@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3B3454F-7D7B-4F49-8E7A-7860DEC52E35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timeline</RootNamespace>
+    <AssemblyName>Timeline</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseLayer.cs" />
+    <Compile Include="LayerTreeModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DemoTimeline.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DemoTimeline.Designer.cs">
+      <DependentUpon>DemoTimeline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimelineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimelineControl.Designer.cs">
+      <DependentUpon>TimelineControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DemoTimeline.resx">
+      <DependentUpon>DemoTimeline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimelineControl.resx">
+      <DependentUpon>TimelineControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs_and_Extensions\Aga_Controls\[External - UI WinForms] Aga_Controls.csproj">
+      <Project>{E73BB233-D88B-44A7-A98F-D71EE158381D}</Project>
+      <Name>[External - UI WinForms] Aga_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoModel\DemoModel.csproj">
+      <Project>{51653610-0611-4EA9-9B9C-9CCDE6A775C4}</Project>
+      <Name>DemoModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\View\[Interfaces - View] View.csproj">
+      <Project>{5B0A4FC2-16B9-47E2-93C1-4980BE7BD84D}</Project>
+      <Name>[Interfaces - View] View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

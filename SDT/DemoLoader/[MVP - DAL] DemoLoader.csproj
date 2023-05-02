@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA0EAD13-7840-485A-954C-3181C190BCFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DemoLoader</RootNamespace>
+    <AssemblyName>DemoLoader</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DemoLoader.cs" />
+    <Compile Include="Loaders\HalfLifeDemoLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BasicDemoLayerEditors\ConsoleCommandLayer.csproj">
+      <Project>{ADB63D5B-5E79-44B9-977F-55A93C79F4C6}</Project>
+      <Name>ConsoleCommandLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BinaryStreamFactory\[Factory] BinaryStreamFactory.csproj">
+      <Project>{4900f3de-b986-4439-b728-6b25f1b9f102}</Project>
+      <Name>[Factory] BinaryStreamFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CameraLayer\CameraLayer.csproj">
+      <Project>{A590DD8A-7E1D-4E9B-BE13-979476EEB39E}</Project>
+      <Name>CameraLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoModel\DemoModel.csproj">
+      <Project>{51653610-0611-4EA9-9B9C-9CCDE6A775C4}</Project>
+      <Name>DemoModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnvironmentInterfaces\[Interfaces] EnvironmentInterfaces.csproj">
+      <Project>{91658b4f-1804-4f13-aedd-c11c23f022dc}</Project>
+      <Name>[Interfaces] EnvironmentInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

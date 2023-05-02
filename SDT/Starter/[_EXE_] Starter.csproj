@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44EAAB0A-5322-40D4-8AAB-81832A47FE95}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Starter</RootNamespace>
+    <AssemblyName>Starter</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="View">
+      <HintPath>..\View\bin\Debug\View.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoDescriptionPresenter\[MVP - Presenter] DemoDescriptionPresenter.csproj">
+      <Project>{295aa451-1994-4479-a4c0-05fc7b3e82ce}</Project>
+      <Name>[MVP - Presenter] DemoDescriptionPresenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoEditCore\[MVP - Presenter] DemoEditCore.csproj">
+      <Project>{76202f8d-3507-4b65-bcbf-cd620096902e}</Project>
+      <Name>[MVP - Presenter] DemoEditCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoLoader\[MVP - DAL] DemoLoader.csproj">
+      <Project>{aa0ead13-7840-485a-954c-3181c190bcff}</Project>
+      <Name>[MVP - DAL] DemoLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoTimelinePresenter\[MVP - Presenter] DemoTimelinePresenter.csproj">
+      <Project>{556aef84-fece-4b55-bbd3-1fe2100ee2f1}</Project>
+      <Name>[MVP - Presenter] DemoTimelinePresenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoTreePresenter\[MVP - Presenter] DemoTreePresenter.csproj">
+      <Project>{351722d3-a250-45da-92a7-6e33617c01fd}</Project>
+      <Name>[MVP - Presenter] DemoTreePresenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoTree\[MVP - View] DemoTree.csproj">
+      <Project>{8B049EC6-0ABD-4F2B-A1E8-46AE403D1598}</Project>
+      <Name>[MVP - View] DemoTree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DescriptionControl\[MVP - View] DescriptionControl.csproj">
+      <Project>{4F8452E3-D4E7-4542-8384-34BBC13DB871}</Project>
+      <Name>[MVP - View] DescriptionControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnvironmentInterfaces\[Interfaces] EnvironmentInterfaces.csproj">
+      <Project>{91658b4f-1804-4f13-aedd-c11c23f022dc}</Project>
+      <Name>[Interfaces] EnvironmentInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainControl\[MVP - View] MainControl - SDT.csproj">
+      <Project>{a5b748df-9858-44b9-be00-0b7f3786e3d1}</Project>
+      <Name>[MVP - View] MainControl - SDT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation\[Interfaces - Presenter] Presentation.csproj">
+      <Project>{8d5d27a4-fd75-4fe8-9576-c2ec8635933e}</Project>
+      <Name>[Interfaces - Presenter] Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timeline\[MVP - View] Timeline.csproj">
+      <Project>{D3B3454F-7D7B-4F49-8E7A-7860DEC52E35}</Project>
+      <Name>[MVP - View] Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\View\[Interfaces - View] View.csproj">
+      <Project>{5b0a4fc2-16b9-47e2-93c1-4980be7bd84d}</Project>
+      <Name>[Interfaces - View] View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
